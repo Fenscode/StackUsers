@@ -1,6 +1,7 @@
 package com.fenscode.stackusers.data.model
 
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
 data class Users(
     @SerializedName("items") var items: List<Item>,
@@ -9,6 +10,7 @@ data class Users(
     @SerializedName("quota_remaining") var quotaRemaining: Int
 )
 
+@Serializable
 data class Item(
     @SerializedName("badge_counts") var badgeCounts: BadgeCounts,
     @SerializedName("is_employee") var isEmployee: Boolean,
@@ -22,13 +24,16 @@ data class Item(
     @SerializedName("creation_date") var creationDate: Int,
     @SerializedName("user_type") var userType: String,
     @SerializedName("user_id") var userId: Int,
+    @SerializedName("location") var location: String,
+    @SerializedName("website_url") var website: String,
     @SerializedName("link") var link: String,
     @SerializedName("profile_image") var profileImage: String,
     @SerializedName("display_name") var displayName: String
-)
+) : java.io.Serializable
 
+@Serializable
 data class BadgeCounts(
     @SerializedName("bronze") var bronze: Int,
     @SerializedName("silver") var silver: Int,
     @SerializedName("gold") var gold: Int
-)
+): java.io.Serializable

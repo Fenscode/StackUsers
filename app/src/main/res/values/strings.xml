@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">StackUsers</string>
     <string name="search">Search</string>
+    <string name="achievements">Achievements</string>
 </resources>

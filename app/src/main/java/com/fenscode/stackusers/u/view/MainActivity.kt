@@ -20,15 +20,13 @@ import com.fenscode.stackusers.databinding.ActivityMainBinding
 import com.fenscode.stackusers.ui.base.ViewModelFactory
 import com.fenscode.stackusers.ui.main.adapter.UsersAdapter
 import com.fenscode.stackusers.ui.main.viewmodel.MainViewModel
+import com.fenscode.stackusers.utils.ItemDecoration
 import com.fenscode.stackusers.utils.Status
 import java.util.*
 import kotlin.collections.ArrayList
 import java.util.Comparator
 
 import java.util.Collections
-
-
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -64,10 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = UsersAdapter(arrayListOf())
         binding.recyclerView.addItemDecoration(
-            DividerItemDecoration(
-                binding.recyclerView.context,
-                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
-            )
+            ItemDecoration(resources.getDimensionPixelSize(R.dimen.margin))
         )
         binding.recyclerView.adapter = adapter
     }
