@@ -10,9 +10,6 @@ import com.fenscode.stackusers.data.model.Item
 import com.fenscode.stackusers.databinding.ActivityAboutUserBinding
 import android.content.Intent
 
-
-
-
 class AboutUser : AppCompatActivity() {
 
     private var _binding: ActivityAboutUserBinding? = null
@@ -27,13 +24,13 @@ class AboutUser : AppCompatActivity() {
         setupContent()
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
-                moveTaskToBack(true)
+                finish()
             }
         }
-        return super.onContextItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroy() {
@@ -42,6 +39,7 @@ class AboutUser : AppCompatActivity() {
     }
 
     private fun setupContent() {
+        supportActionBar?.elevation = 0f
         val user: Item = let { intent.getSerializableExtra("EXTRA_PEOPLE") as Item }
 
         Glide.with(binding.ivAvatar.context)

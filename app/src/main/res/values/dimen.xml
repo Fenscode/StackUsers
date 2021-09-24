@@ -2,4 +2,5 @@
 <resources>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin">16dp</dimen>
+    <dimen name="margin_36">36dp</dimen>
 </resources>

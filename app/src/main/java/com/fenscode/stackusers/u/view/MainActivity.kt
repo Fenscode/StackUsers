@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
+        supportActionBar?.elevation = 0f
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = UsersAdapter(arrayListOf())
         binding.recyclerView.addItemDecoration(
